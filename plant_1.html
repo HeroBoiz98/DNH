@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Wastage Data</title>
+  <!-- Add your custom styles here if needed -->
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    input {
+      width: 60px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <h1>Plant 1</h1>
+  
+  <!-- Monthly Input Form -->
+  <form id="inputForm">
+    <label for="january">January:</label>
+    <input type="number" id="january" min="0" max="100" required>
+    
+    <label for="february">February:</label>
+    <input type="number" id="february" min="0" max="100" required>
+
+    <label for="march">March:</label>
+    <input type="number" id="march" min="0" max="100" required>
+
+    <label for="april">April:</label>
+    <input type="number" id="april" min="0" max="100" required>
+
+    <label for="may">May:</label>
+    <input type="number" id="may" min="0" max="100" required>
+
+    <label for="june">June:</label>
+    <input type="number" id="june" min="0" max="100" required>
+
+    <label for="july">July:</label>
+    <input type="number" id="july" min="0" max="100" required>
+
+    <label for="august">August:</label>
+    <input type="number" id="august" min="0" max="100" required>
+
+    <label for="september">September:</label>
+    <input type="number" id="september" min="0" max="100" required>
+
+    <label for="october">October:</label>
+    <input type="number" id="october" min="0" max="100" required>
+
+    <label for="november">November:</label>
+    <input type="number" id="november" min="0" max="100" required>
+
+    <label for="december">December:</label>
+    <input type="number" id="december" min="0" max="100" required>
+
+    <button type="button" onclick="updateTable()">Update Table</button>
+  </form>
+  
+  <!-- Wastage Table -->
+  <table id="wastageTable">
+    <tr>
+      <th>January</th>
+      <th>February</th>
+      <th>March</th>
+      <th>April</th>
+      <th>May</th>
+      <th>June</th>
+      <th>July</th>
+      <th>August</th>
+      <th>September</th>
+      <th>October</th>
+      <th>November</th>
+      <th>December</th>
+    </tr>
+    <tr id="wastageRow">
+      <!-- Initial values are set to 0%, you can change them if needed -->
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  function updateTable() {
+    // Get input values
+    var january = document.getElementById('january').value + '%';
+    var february = document.getElementById('february').value + '%';
+    var march = document.getElementById('march').value + '%';
+    var april = document.getElementById('april').value + '%';
+    var may = document.getElementById('may').value + '%';
+    var june = document.getElementById('june').value + '%';
+    var july = document.getElementById('july').value + '%';
+    var august = document.getElementById('august').value + '%';
+    var september = document.getElementById('september').value + '%';
+    var october = document.getElementById('october').value + '%';
+    var november = document.getElementById('november').value + '%';
+    var december = document.getElementById('december').value + '%';
+
+    // Update table
+    document.getElementById('wastageRow').innerHTML = `
+      <td>${january}</td>
+      <td>${february}</td>
+      <td>${march}</td>
+      <td>${april}</td>
+      <td>${may}</td>
+      <td>${june}</td>
+      <td>${july}</td>
+      <td>${august}</td>
+      <td>${september}</td>
+      <td>${october}</td>
+      <td>${november}</td>
+      <td>${december}</td>
+    `;
+  }
+</script>
+
+</body>
+</html>
